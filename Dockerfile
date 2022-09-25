@@ -4,6 +4,7 @@ MAINTAINER Supriya Premkumar <bWUgYXQgc3Vwcml5YSBkb3QgZGV2Cg==>
 WORKDIR $GOPATH/src/github.com/raft-kv-store
 
 ADD go.mod go.sum $GOPATH/src/github.com/raft-kv-store/
+RUN go env -w GOPROXY=https://goproxy.cn,direct
 RUN go mod download
 
 COPY . .
